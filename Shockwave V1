@@ -1,0 +1,256 @@
+{
+	Tools = ordered() {
+		pEmitter1 = pEmitter {
+			ID = 2,
+			Inputs = {
+				Number = Input {
+					SourceOp = "pEmitter1Number",
+					Source = "Value",
+				},
+				NumberVariance = Input {
+					SourceOp = "pEmitter1NumberVariance",
+					Source = "Value",
+				},
+				Lifespan = Input { Value = 5, },
+				LifespanVariance = Input { Value = 48.7, },
+				VelocityControls = Input { Value = 1, },
+				VelocityVariance = Input { Value = 0.091, },
+				Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+				["ParticleStyleBlob.Noise"] = Input { Value = 0.102, },
+				["ParticleStyle.ColorControls"] = Input { Value = 1, },
+				["ParticleStyle.SizeControls"] = Input { Value = 1, },
+				["ParticleStyle.Size"] = Input { Value = 0.3904, },
+				["ParticleStyle.SizeOverLife"] = Input {
+					SourceOp = "pEmitter1SizeOverLife",
+					Source = "Value",
+				},
+				["ParticleStyle.FadeControls"] = Input { Value = 1, },
+				["ParticleStyle.MergeControls"] = Input { Value = 1, },
+				["ParticleStyle.BlurOverLife"] = Input {
+					SourceOp = "pEmitter1BlurOverLife2D",
+					Source = "Value",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 265.746, 139.792 } },
+		},
+		pEmitter1Number = BezierSpline {
+			SplineColor = { Red = 233, Green = 206, Blue = 78 },
+			NameSet = true,
+			KeyFrames = {
+				[6] = { 37.4, RH = { 10, 37.4 }, Flags = { Linear = true } },
+				[18] = { 37.4, LH = { 14, 37.4 }, RH = { 21, 26.2818050760502 }, Flags = { Linear = true } },
+				[27] = { 0, LH = { 24, 0 } }
+			}
+		},
+		pEmitter1NumberVariance = BezierSpline {
+			SplineColor = { Red = 160, Green = 13, Blue = 246 },
+			NameSet = true,
+			KeyFrames = {
+				[23] = { 100, RH = { 26, 100 } },
+				[32] = { 0, LH = { 29, 0 } }
+			}
+		},
+		pEmitter1SizeOverLife = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.3, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.7, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64 },
+		},
+		pEmitter1BlurOverLife2D = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.3, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.7, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 180, Green = 255, Blue = 0 },
+			CtrlWZoom = false,
+			NameSet = true,
+		},
+		pPointForce1 = pPointForce {
+			ID = 6,
+			Inputs = {
+				Strength = Input {
+					SourceOp = "pPointForce1Strength",
+					Source = "Value",
+				},
+				Power = Input { Value = 1.941, },
+				LimitForce = Input { Value = 0.348, },
+				Input = Input {
+					SourceOp = "pEmitter1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 425.924, 256.92 } },
+		},
+		pPointForce1Strength = BezierSpline {
+			SplineColor = { Red = 242, Green = 58, Blue = 8 },
+			CtrlWZoom = false,
+			NameSet = true,
+			KeyFrames = {
+				[7] = { 0, RH = { 7.66666666666667, 0 } },
+				[9] = { 0.03, LH = { 7.61999999999996, 0.0294 }, RH = { 12.0112713188547, 0.031309248399502 } },
+				[18] = { -0.008, LH = { 15, -0.008 } }
+			}
+		},
+		pSpawn1 = pSpawn {
+			ID = 14,
+			Inputs = {
+				Number = Input {
+					SourceOp = "pSpawn1Number",
+					Source = "Value",
+				},
+				NumberVariance = Input {
+					SourceOp = "pSpawn1NumberVariance",
+					Source = "Value",
+				},
+				Lifespan = Input { Value = 21, },
+				LifespanVariance = Input { Value = 6.4, },
+				Color = Input { Value = 1, },
+				TemporalDistribution = Input { Value = 1, },
+				VelocityControls = Input { Value = 1, },
+				VelocityTransfer = Input { Value = 0.598, },
+				Input = Input {
+					SourceOp = "pPointForce1",
+					Source = "Output",
+				},
+				["ParticleStyle.SizeOverLife"] = Input {
+					SourceOp = "pSpawn1SizeOverLife",
+					Source = "Value",
+				},
+				["ParticleStyle.BlurOverLife"] = Input {
+					SourceOp = "pSpawn1BlurOverLife2D",
+					Source = "Value",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 464.253, 335.802 } },
+		},
+		pSpawn1Number = BezierSpline {
+			SplineColor = { Red = 233, Green = 206, Blue = 78 },
+			NameSet = true,
+			KeyFrames = {
+				[6] = { 0, RH = { 8, 2.62222222222222 }, Flags = { Linear = true } },
+				[12] = { 11.8, LH = { 10.0002000331879, 11.8 }, RH = { 18.9992998838425, 11.8 } },
+				[33] = { 0, LH = { 26, 0 } }
+			}
+		},
+		pSpawn1NumberVariance = BezierSpline {
+			SplineColor = { Red = 160, Green = 13, Blue = 246 },
+			CtrlWZoom = false,
+			NameSet = true,
+			KeyFrames = {
+				[32] = { 10.2, RH = { 35.3333333333333, 10.2 } },
+				[42] = { 0, LH = { 38.6666666666667, 0 } }
+			}
+		},
+		pSpawn1SizeOverLife = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.3, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.7, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 180 },
+			NameSet = true,
+		},
+		pSpawn1BlurOverLife2D = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.3, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.7, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 180, Blue = 0 },
+			CtrlWZoom = false,
+			NameSet = true,
+		},
+		pTurbulence1 = pTurbulence {
+			ID = 7,
+			Inputs = {
+				StrengthOverLifeLUT = Input {
+					SourceOp = "pTurbulence1StrengthOverLifeLUT",
+					Source = "Value",
+				},
+				Input = Input {
+					SourceOp = "pSpawn1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 326.919, 435.124 } },
+		},
+		pTurbulence1StrengthOverLifeLUT = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.3, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.7, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 0, Blue = 180 },
+			CtrlWZoom = false,
+			NameSet = true,
+		},
+		pFriction1 = pFriction {
+			ID = 9,
+			Inputs = {
+				VelocityFriction = Input { Value = 0.086, },
+				SpinFriction = Input { Value = 0.05, },
+				Input = Input {
+					SourceOp = "pTurbulence1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 382.236, 533.691 } },
+		},
+		pTurbulence1_1 = pTurbulence {
+			ID = 12,
+			Inputs = {
+				XStrength = Input { Value = 0.23, },
+				YStrength = Input { Value = 0.241, },
+				StrengthOverLifeLUT = Input {
+					SourceOp = "pTurbulence1_1StrengthOverLifeLUT",
+					Source = "Value",
+				},
+				Density = Input { Value = 43.9, },
+				Input = Input {
+					SourceOp = "pFriction1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 469.918, 564.529 } },
+		},
+		pTurbulence1_1StrengthOverLifeLUT = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 0, Blue = 180 },
+			CtrlWZoom = false,
+			NameSet = true,
+		},
+		pRender1 = pRender {
+			CtrlWZoom = false,
+			Inputs = {
+				_MotionBlurWarning = Input { Disabled = true, },
+				GlobalOut = Input { Value = 124, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				OutputMode = Input { Value = FuID { "TwoD" }, },
+				PreGenerateFrames = Input { Value = 48, },
+				["MaterialID.MaterialID"] = Input { Value = 1, },
+				["ObjectID.ObjectID"] = Input { Value = 1, },
+				Input = Input {
+					SourceOp = "pTurbulence1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 473.227, 608.968 } },
+		}
+	}
+}
